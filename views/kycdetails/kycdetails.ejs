@@ -1,0 +1,132 @@
+<section class="invoice">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="page-header">
+                Vishnu's Business.
+            </h2>
+        </div>
+    </div>
+    <div class="row invoice-info">
+        <div class="col-sm-6 invoice-col">
+            Address
+            <address>
+                <strong>Vishnu's Business.</strong>
+                <br>3/69 Dudley Street,
+                <br>Hutt Central
+                <br>Wellington-5010
+                <br>Phone: +64 2108373286
+                <br>info@vishnudev.com
+            </address>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Verify using KauriID</h3>
+                </div>
+                <div class="box-body table-responsive no-padding">
+                    <table class="table">
+                        <tbody>
+                        <div class="container">
+                            <button type="button" class="btn btn-info" onclick="verify()">Connect with uPort</button>
+                        </div>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Company Document</h3>
+                </div>
+                <div class="box-body table-responsive no-padding">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td> Certificate of Incorporation</td>
+                                <td class="fileROC">
+                                    <input type="file" class="kyc-file" id="fileROC" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> Passport </td>
+                                <td class="fileCompanyPAN">
+                                    <input type="file" class="kyc-file" id="fileCompanyPAN" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Driver's License
+                                    <br>(International/National) </td>
+                                <td class="fileIT">
+                                    <input type="file" class="kyc-file" id="fileIT" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> National ID </td>
+                                <td class="fileAadhar">
+                                    <input type="file" class="kyc-file" id="fileAadhar" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> Visa </td>
+                                <td class="filePromotePAN">
+                                    <input type="file" class="kyc-file" id="filePromotePAN" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <div class="box box-info">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <pre style="word-wrap: break-word;" id="credential-container"></pre>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+        </div>
+
+        <!--<div class="container" tabindex="-1" role="dialog" id="myModal">-->
+            <!--<div class="modal-dialog" role="document">-->
+                <!--<div class="modal-content">-->
+                    <!--<div class="modal-header">-->
+                        <!--<h5 class="modal-title">uPort Credentials</h5>-->
+                        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                            <!--<span aria-hidden="true">&times;</span>-->
+                        <!--</button>-->
+                    <!--</div>-->
+                    <!--<div class="modal-body">-->
+                        <!--<pre style="word-wrap: break-word;" id="credential-container"></pre>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+    <!--<div class="modal" tabindex="-1" role="dialog" id="myModal">-->
+        <!--<div class="modal-dialog" role="document">-->
+            <!--<div class="modal-content">-->
+                <!--<div class="modal-header">-->
+                    <!--<h5 class="modal-title">uPort Credentials</h5>-->
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                        <!--<span aria-hidden="true">&times;</span>-->
+                    <!--</button>-->
+                <!--</div>-->
+                <!--<div class="modal-body">-->
+                    <!--<pre style="word-wrap: break-word;" id="credential-container"></pre>-->
+                <!--</div>-->
+                <!--<div class="modal-footer">-->
+                    <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+
+</section>
+

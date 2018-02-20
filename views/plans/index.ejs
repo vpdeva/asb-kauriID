@@ -1,0 +1,73 @@
+<%- include ../partials/head.ejs %>
+    <body class="hold-transition sidebar-mini">
+        <%- include ../partials/header.ejs %>
+        <%- include ../partials/sidebar.ejs %>
+        <div class="content-wrapper">
+            <%- include plans.ejs %>
+            <%- include planView.ejs %>
+            <%- include planDetails.ejs %>
+        </div>
+        <%- include ../partials/footer.ejs %>
+        <%- include ../partials/scripts.ejs %>
+        <script src="javascripts/planView.js"></script>        
+    </body>
+
+    <script type="text/javascript" src="javascripts/uport.js"></script>
+    <script type="text/javascript">
+
+function MyContractSetup () {
+    let MyContractABI = web3.eth.contract([{"constant":true,"inputs":[],"name":"getBidStatus","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"amt","type":"uint256"}],"name":"bid","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getBidderLength","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"add","type":"address"}],"name":"getBidByBidder","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"startBid","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"bidder","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"endBid","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"bidOf","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"getWinner","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}]);
+    let MyContractObj = MyContractABI.at("0x9778dc5a427e9848d879b66f26bde2087acf7f49")
+    return MyContractObj
+  }
+  
+
+// Callback handler for whether it was mined or not
+const waitForMined = (txHash, response, pendingCB, successCB) => {
+    if (response.blockNumber) {
+      successCB()
+    } else {
+      pendingCB()
+        pollingLoop(txHash, response, pendingCB, successCB)
+    }
+  }
+  
+  // Recursive polling to do continuous checks for when the transaction was mined
+  const pollingLoop = (txHash, response, pendingCB, successCB) => {
+    setTimeout(function () {
+      web3.eth.getTransaction(txHash, (error, response) => {
+        if (error) { throw error }
+          if (response === null) {
+            response = { blockNumber: null }
+          } // Some ETH nodes do not return pending tx
+          waitForMined(txHash, response, pendingCB, successCB)
+      })
+    }, 1000) // check again in one sec.
+  }
+
+
+
+
+    const MyContract = MyContractSetup()
+    console.log(MyContract);
+    
+    function bid()
+    {
+    // Transaction signing (that will fire a QR to scan or card in the mobile app)
+    MyContract.bid(parseInt($('#bid-txt').val()),(error, txHash) => {
+    if (error) { throw error }
+        waitForMined(txHash, { blockNumber: null }, // see next area
+        function pendingCB () {
+        // Signal to the user you're still waiting
+        // for a block confirmation
+        },
+        function successCB (data) {
+        // Great Success!
+        alert("Bidding Successfull!!")
+        // Likely you'll call some eventPublisherMethod(txHash, data)
+        }
+    )
+    });
+    }
+    
+    </script>

@@ -1,0 +1,43 @@
+<section class="content">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">KYC Form</h3>
+        </div>
+        <form id="kyc-form">
+            <div class="box-body">
+                <p class="help-block"></p>
+                <div class="form-group col-md-6" name="company-name">
+                    <label>Company</label>
+                    <input type="text" name="company-name" class="form-control" placeholder="Company Name" />
+                </div>
+                <div class="form-group col-md-6" name="company-number">
+                    <label>Registration Number</label>
+                    <input type="text" name="company-number" class="form-control" placeholder="Company Registration Number" />
+                </div>
+                <div class="form-group col-md-12" name="certificate">
+                    <label>Certificate</label>
+                    <input type="file" name="certificate" class="form-control kyc-file" />
+                </div>
+                <div class="form-group col-md-6" name="aadhar-number">
+                    <label>Aadhar No.</label>
+                    <input type="text" name="aadhar-number" class="form-control" placeholder="Aadhar No." data-inputmask="mask':'99-9999999'" data-mask/>
+                </div>
+                <div class="form-group col-md-6" name="aadhar-image">
+                    <label>Aadhar Image</label>
+                    <input type="file" name="aadhar-image" class="form-control kyc-file" id="aadhar" />
+                </div>
+                <div class="form-group col-md-6" name="pan-number">
+                    <label>PAN No.</label>
+                    <input type="text" name="pan-number" class="form-control" placeholder="PAN No." />
+                </div>
+                <div class="form-group col-md-6" name="pan-image">
+                    <label>PAN Image</label>
+                    <input type="file" name="pan-image" class="form-control kyc-file" />
+                </div>
+            </div>
+            <div class="box-footer">
+                <button class="btn btn-primary pull-right" id="kyc-submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</section>
