@@ -1,5 +1,5 @@
 // Change the App Skin Color here
-const appSkinColor = "purple";
+const appSkinColor = "yellow";
 
 // API calls
 const userPost = "/home"
