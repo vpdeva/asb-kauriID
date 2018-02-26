@@ -13,8 +13,12 @@
     <script src="javascripts/kycdetails.js"></script>
 </body>
 <script type="text/javascript" src="javascripts/uport.js"></script>
-<script type="text/javascript">
 
+<script type="text/javascript">
+    document.getElementById("uportButton").addEventListener("click", uportButton);
+    function uportButton() {
+        document.getElementById('uportButton').disabled = true;
+    }
     function verify()
     {
         if ($(this).hasClass('btn-success')) {
@@ -36,7 +40,10 @@
                     // Do something
                     console.log("Received credentials", credentials);
                     $('#uport-status').text('Connected');
-                    $('#credential-container').text(JSON.stringify(credentials, null, 2));
+                    // $('#uportForm').text(JSON.stringify(credentials, null, 2));
+                    $('#name').val(credentials.name);
+                    $('#phone').val(credentials.phone);
+                    $('#country').val(credentials.country);
                     $('#myModal').modal('show');
                     // Attest specific credentials
                     if (typeof credentials['bundle'] == 'undefined') {

@@ -1,5 +1,5 @@
 // Change the App Skin Color here
-const appSkinColor = "purple";
+const appSkinColor = "yellow";
 
 // API calls
 const userPost = "/home"
@@ -10,7 +10,7 @@ const kycGet = "/kyc/details";
 //const dashboardUrl = "/dashboard";
 const kycUrl = "/kyc";
 const plansUrl = "/";
-const creditscoreUrl = "/creditscore"
+const creditscoreUrl = "/creditscore";
 
 //const credentials = window.localStorage.getItem('credentials') ? JSON.parse(window.localStorage.getItem('credentials')) : null;
 const isLoggedIn = true;
