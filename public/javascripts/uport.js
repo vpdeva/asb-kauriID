@@ -24,8 +24,10 @@ function uportLogin(){
         notifications: true // We want this if we want to recieve credentials
     })
         .then((credentials) => {
-            window.localStorage.setItem('credentials', JSON.stringify(credentials));
-                    console.log(location.protocol+"://"+location.host+'/home');
+            localStorage.setItem("name", credentials.name);
+                            localStorage.setItem("phone", credentials.phone);
+                            localStorage.setItem("country", credentials.country);
+                               console.log(location.protocol+"://"+location.host+'/home');
                     location.href = '/kyc';
         });
 
