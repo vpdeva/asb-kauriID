@@ -9,7 +9,7 @@ const kycGet = "/kyc/details";
 // IP is kept static bind here dynamically;
 const dashboardUrl = "/dashboard";
 const kycUrl = "/kyc";
-const plansUrl = "/";
+const plansUrl = "/plans";
 const creditscoreUrl = "/creditscore";
 
 const credentials = window.localStorage.getItem('credentials') ? JSON.parse(window.localStorage.getItem('credentials')) : null;
