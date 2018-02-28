@@ -27,4 +27,4 @@ $(document).ready(() => {
     configureLinks();
 })
 
-console.log(location.pathname)
+console.log(location.pathname);

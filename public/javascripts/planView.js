@@ -4,7 +4,7 @@ $(document).ready(function () {
     $("#planDetail").hide();
     var tableDetails = "",
         plans = "";
-    //for (i = 1; i <= 4; i++) {
+    for (i = 1; i <= 4; i++) {
        var plan1 = "<li class='item row'>" +
             "<div class='col-md-9 col-xs-9'>" +
             "<a href='#' class='product-title'>Plan Name" +
@@ -61,29 +61,29 @@ $(document).ready(function () {
             "</button>" +
             " </div>" +
             "</li>";
-   // }
+   }
 
    plans = plan1+plan2+plan3;
     $("#plans").html(plans);
-    //for (i = 1; i <= 4; i++) {
+    for (i = 1; i <= 4; i++) {
 
 
     var tr = "<tr><td>T1</td><td>Paid</td><td><i class='fa fa-dollar'></i>25000</td><td>20/01/18</td></tr>"+"<tr><td>T2</td><td>Paid</td><td><i class='fa fa-dollar'></i>25000</td><td>20/02/18</td></tr>"+"<tr><td>T3</td><td>Paid</td><td><i class='fa fa-dollar'></i>25000</td><td>20/03/18</td></tr>";
         tableDetails = tableDetails + tr;
-   // }
+   }
     $("#tableDetails").html(tableDetails);
     $("#viewPlan").click(function () {
         viewPlans();
     });
-    // $("#viewPlan2").click(function () {
-    //     viewPlans();
-    // });
-    // $("#viewPlan3").click(function () {
-    //     viewPlans();
-    // });
-    // $("#viewPlan4").click(function () {
-    //     viewPlans();
-    // });
+    $("#viewPlan2").click(function () {
+        viewPlans();
+    });
+    $("#viewPlan3").click(function () {
+        viewPlans();
+    });
+    $("#viewPlan4").click(function () {
+        viewPlans();
+    });
     $("#detailPlan").click(function () {
         viewPlansDetails();
     });

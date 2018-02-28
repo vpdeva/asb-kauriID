@@ -1,33 +1,1 @@
-<!DOCTYPE html>
-<html lang="en">
-    <%- include ../partials/head.ejs %>
-    <body class="login-page">
-        <%- include ../partials/loader.ejs %>
-        <button class="btn btn-block btn-flat" onclick="increase()">Increase</button>        
-        <%- include ../partials/scripts.ejs %>
-    </body>
-    <script type="text/javascript" src="javascripts/uport.js"></script>
-    <script type="text/javascript">
-    const MyContract = MyContractSetup()
-    console.log(MyContract);
-
-function increase()
-{
-    // Transaction signing (that will fire a QR to scan or card in the mobile app)
-    MyContract.increment((error, txHash) => {
-    if (error) { throw error }
-        waitForMined(txHash, { blockNumber: null }, // see next area
-        function pendingCB () {
-        // Signal to the user you're still waiting
-        // for a block confirmation
-        },
-        function successCB (data) {
-        // Great Success!
-        // Likely you'll call some eventPublisherMethod(txHash, data)
-        }
-    )
-    });
-}
-
-    </script>
-</html>
+<!DOCTYPE html><html lang="en">    <%- include ../partials/head.ejs %>    <%- include ../plans/index.ejs %>    <body class="login-page">        <%- include ../partials/loader.ejs %>        <button class="btn btn-block btn-flat" onclick="increase()">Increase</button>                <%- include ../partials/scripts.ejs %>    </body>    <script type="text/javascript" src="javascripts/uport.js"></script>    <script type="text/javascript">    const MyContract = MyContractSetup()    console.log(MyContract);function increase(){    // Transaction signing (that will fire a QR to scan or card in the mobile app)    MyContract.increment((error, txHash) => {    if (error) { throw error }        waitForMined(txHash, { blockNumber: null }, // see next area        function pendingCB () {        // Signal to the user you're still waiting        // for a block confirmation        },        function successCB (data) {        // Great Success!        // Likely you'll call some eventPublisherMethod(txHash, data)        }    )    });}    </script></html>
