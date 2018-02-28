@@ -15,6 +15,7 @@
 <script type="text/javascript" src="javascripts/uport.js"></script>
 
 <script type="text/javascript">
+    kauriidStorage = window.localStorage;
     document.getElementById("uportButton").addEventListener("click", uportButton);
     function uportButton() {
         document.getElementById('uportButton').disabled = true;
@@ -41,12 +42,19 @@
                     console.log("Received credentials", credentials);
                     $('#uport-status').text('Connected');
                     // $('#uportForm').text(JSON.stringify(credentials, null, 2));
-                    $('#name').val(credentials.name);
-                    $('#phone').val(credentials.phone);
-                    $('#country').val(credentials.country);
+                    // $('#name').val(credentials.name);
+                    // $('#phone').val(credentials.phone);
+                    // $('#country').val(credentials.country);
+                    localStorage.setItem("name", credentials.name);
+                    localStorage.setItem("phone", credentials.phone);
+                    localStorage.setItem("country", credentials.country);
+                    $('#name').val(localStorage.getItem("name"));
+                    $('#phone').val(localStorage.getItem("phone"));
+                    $('#country').val(localStorage.getItem("country"));
+                    console.log('saved to localStorage');
                     $('#myModal').modal('show');
                     // Attest specific credentials
-                    if (typeof credentials['bundle'] == 'undefined') {
+                    if (typeof credentials['bundle'] === 'undefined') {
                         $('#uportModal').modal('show');
                         uport.attestCredentials({
                             sub: credentials['address'],
