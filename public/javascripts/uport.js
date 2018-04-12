@@ -3,28 +3,45 @@ const Connect = window.uportconnect.Connect;
 const SimpleSigner = window.uportconnect.SimpleSigner;
 
 // Uncomment after sometime since the App Profile is not deployed yet
-/* const uport = new Connect(appName, {
-    clientId: '2ojLdqE5tXTFiHkVaAYYWqD6GpJvyRPjq3A',
-    network: 'rinkeby',
-    signer: SimpleSigner('4f8c71fc8b2327bd3717b9d602facfd3f8d5f512f3a5d4de74f36365b3c092f6')
-}); */
+    const uport = new Connect('kauri-login', {
+        clientId: '2oy1eyQuGutToy3R1mjuWydE2NQXXXsxxYZ',
+        network: 'rinkeby',
+        signer: SimpleSigner('591d9071d49c91f0b15694a7f0fd9c82698f974b0010b2d55463fe81206ca77d')
+    });
 
-const uport = new Connect(appName);
+// const uport = new Connect(appName);
 
 const web3 = uport.getWeb3();
-const uportRequest = {
-    requested: ['name', 'avatar', 'country', 'email', 'phone'],
-    notifications: true
-}
+// const uportRequest = {
+//     requested: ['name', 'avatar', 'country', 'email', 'phone'],
+//     notifications: true
+// };
 
 function uportLogin(){
     // Add the Request params after the Profile is verified
-    uport.requestCredentials()
+    uport.requestCredentials({
+        requested: ['avatar', 'name', 'email', 'phone', 'country', 'address'],
+        notifications: true // We want this if we want to recieve credentials
+    })
         .then((credentials) => {
-            window.localStorage.setItem('credentials', JSON.stringify(credentials));
-            // console.log(location.protocol+"://"+location.host+'/home');
-            location.href = '/home';
-        })
+            localStorage.setItem("name", credentials.name);
+            localStorage.setItem("avatar", credentials.avatar.uri);
+            localStorage.setItem("phone", credentials.phone);
+            localStorage.setItem("email", credentials.email);
+            localStorage.setItem("address", credentials.address);
+            localStorage.setItem("country", credentials.country);
+            console.log(location.protocol+"://"+location.host+'/home');
+            location.href = '/kyc';
+        });
+
+    // Attest specific credentials
+    uport.attestCredentials({
+        sub: THE_RECEIVING_UPORT_ADDRESS,
+        claim: {
+            CREDENTIAL_NAME: CREDENTIAL_VALUE
+        },
+        exp: new Date().getTime() + 30 * 24 * 60 * 60 * 1000, // 30 days from now
+    })
         .catch(console.log)
 }
 

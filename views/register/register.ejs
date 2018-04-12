@@ -1,0 +1,86 @@
+<div class="pull-right">
+    <div class="alert alert-success fade">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Alert!</strong> Your data has been sent :)
+    </div>
+</div>
+<div class="container">
+    <h1>Register</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="http://www.userlogos.org/files/logos/bottman/asb.png" href="#" class="thumbnail rounded img-responsive" alt="ASB">
+            <!--<img src="/img/asb.jpg" alt="ASB" /><br/>-->
+            <a class="btn btn-primary" data-toggle="modal" data-target="#myModal">Register</a>
+        </div>
+        <div class="col-md-4">
+            <img src="http://leadingedgegroup.co.nz/wp-content/uploads/2014/08/2-0-Channel-Partner-Logo-349x234-Spark-Digital.jpg" href="#" style="height: 273px" class="thumbnail rounded img-responsive" alt="Spark">
+            <!--<img src="/img/spark.jpg" alt="Spark" /><br/>-->
+            <a class="btn btn-primary" data-toggle="modal" data-target="#myModal">Register</a>
+        </div>
+        <div class="col-md-4">
+            <img src="http://govhack.org.nz/wp-content/uploads/2017/06/iag_logo_large.png" href="#" class="thumbnail rounded img-responsive" alt="IAG">
+            <!--<img src="/img/iag.jpg" alt="IAG" /><br/>-->
+            <a class="btn btn-primary" data-toggle="modal" data-target="#myModal">Register</a>
+        </div>
+        <div class="col-md-4">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/dd/MercuryEnergy-logo.svg/1200px-MercuryEnergy-logo.svg.png" href="#" style="margin-top: 25px; height: 273px" class="thumbnail rounded img-responsive" alt="Mercury">
+            <!--<img src="/img/mercury.jpg" alt="Mercury" /><br/>-->
+            <a class="btn btn-primary" data-toggle="modal" data-target="#myModal">Register</a>
+        </div>
+        <div class="col-md-4">
+            <img src="https://pbs.twimg.com/profile_images/778642762119778304/XoNnCvDF.jpg" href="#" style="margin-top: 25px; height: 273px; width: 500px" class="thumbnail rounded img-responsive" alt="City Fitness">
+            <!--<img src="/img/cityfitness.jpg" alt="City Fitness" /><br/>-->
+            <a class="btn btn-primary" data-toggle="modal" data-target="#myModal">Register</a>
+        </div>
+        <div class="col-md-4">
+            <img src="http://www.remuera.org.nz/media/k2/items/cache/75b44b0e9c2e5d305fa323c6c51d3476_XL.jpg" href="#" style="margin-top: 25px; height: 273px; width: 500px" class="thumbnail rounded img-responsive" alt="Liquor Land">
+            <!--<img src="/img/liquorland.jpg" alt="Liquor Land" /><br/>-->
+            <a class="btn btn-primary" data-toggle="modal" data-target="#myModal">Register</a>
+        </div>
+        <br/>
+    </div>
+</div>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Register</h4>
+    </div>
+    <div class="modal-body">
+        <p>Select which information you want to release</p>
+        <form>
+            <label><input type="checkbox" /> Photo   </label>
+            <label><input type="checkbox" /> Name   </label>
+            <label><input type="checkbox" /> Email   </label>
+            <label><input type="checkbox" /> Phone   </label>
+            <label><input type="checkbox" /> Address   </label>
+            <label><input type="checkbox" /> Location   </label>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Register</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+    </div>
+</div>
+    </div>
+</div>
+<script type='text/javascript'
+        src='http://code.jquery.com/jquery-1.9.1.js'></script>
+<script>
+    $('a').click(function(){
+        console.log($(this).text());
+        if($(this).text().trim() === 'Register' ){
+            $(this).text('Revoke');
+        }else{
+            $(this).text('Register');
+        }
+    });
+</script>
+<script>
+    $(".btn-success").on("click", function() {
+        $(".alert").removeClass("in").show();
+        $(".alert").delay(200).addClass("in").fadeOut(2000);
+    });
+</script>
+

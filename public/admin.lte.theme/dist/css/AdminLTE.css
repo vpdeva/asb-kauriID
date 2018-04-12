@@ -5654,14 +5654,14 @@ table.text-center th {
     padding-top: 0 !important;
   }
   .invoice {
-    width: 100%;
+    width: 50%;
     border: 0;
     margin: 0;
     padding: 0;
   }
   .invoice-col {
     float: left;
-    width: 33.3333333%;
+    width: 50%;
   }
   .table-responsive {
     overflow: auto;

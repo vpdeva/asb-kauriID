@@ -1,24 +1,15 @@
+
 <section class="invoice">
     <div class="row">
         <div class="col-xs-12">
             <h2 class="page-header">
-                Vishnu's Business.
+                Know your customer
             </h2>
         </div>
     </div>
-    <div class="row invoice-info">
-        <div class="col-sm-6 invoice-col">
-            Address
-            <address>
-                <strong>Vishnu's Business.</strong>
-                <br>3/69 Dudley Street,
-                <br>Hutt Central
-                <br>Wellington-5010
-                <br>Phone: +64 2108373286
-                <br>info@vishnudev.com
-            </address>
-        </div>
-        <div class="col-md-6 col-xs-12">
+    <div class="row">
+    <div class="invoice-info">
+        <div style="float:left; width:50%;">
             <div class="box box-info">
                 <div class="box-header with-border">
                     <h3 class="box-title">Verify using KauriID</h3>
@@ -27,7 +18,39 @@
                     <table class="table">
                         <tbody>
                         <div class="container">
-                            <button type="button" class="btn btn-info" onclick="verify()">Connect with uPort</button>
+                            <div class="row">
+                                <div class="col-xs-11">
+                                    <div class="form-group">
+                                        <form role="form" id="uportForm" autocomplete="off">
+                                            <div class="pull-left img-rounded">
+                                                <input type="image" href="#" width="100px" src="" onchange="setLink()" height="100px" name="avatar" id="avatar" title="avatar">
+                                            </div>
+                                            <div class="col-xs-6" style="margin-bottom: 10px">
+                                                <label for="name" class="sr-only">Name</label>
+                                                <input type="text" name="name" id="name" title="Use uPort to edit" readonly class="form-control" placeholder="Name">
+                                            </div>
+                                            <div class="col-xs-6" style="margin-bottom: 10px">
+                                                <label for="phone" class="sr-only">Phone</label>
+                                                <input type="text" name="phone" id="phone" title="Use uPort to edit" readonly class="form-control" placeholder="Mobile Number">
+                                            </div>
+                                            <div class="col-xs-6" style="margin-bottom: 10px">
+                                                <label for="email" class="sr-only">email</label>
+                                                <input type="text" name="email" id="email" title="Use uPort to edit" readonly class="form-control" placeholder="Email">
+                                            </div>
+                                            <!--<div class="col-xs-7" style="margin-bottom: 10px">-->
+                                                <!--<label for="address" class="sr-only">Address</label>-->
+                                                <!--<input type="text" name="address" id="address" title="Use uPort to edit" readonly class="form-control" placeholder="Address">-->
+                                            <!--</div>-->
+                                            <div class="col-xs-7" style="margin-bottom: 15px" >
+                                                <label for="country" class="sr-only">Country</label>
+                                                <input type="text" name="country" id="country" title="Use uPort to edit" readonly class="form-control" placeholder="Country">
+                                            </div>
+                                        </form>
+                                        <hr>
+                                    </div>
+                                </div> <!-- /.col-xs-12 -->
+                            </div> <!-- /.row -->
+                            <!--<button type="button" style="margin-bottom: 10px; margin-left: 13px" class="btn btn-info" id="uportButton" onclick="verify();uportButton()">Connect with uPort</button>-->
                         </div>
                         </tbody>
                     </table>
@@ -35,11 +58,11 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6 col-xs-12">
+    <div class="invoice-info">
+        <div style="float:right; width:48%;">
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Company Document</h3>
+                    <h3 class="box-title">Verify Manually</h3>
                 </div>
                 <div class="box-body table-responsive no-padding">
                     <table class="table">
@@ -80,53 +103,19 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 col-xs-12">
-            <div class="box box-info">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-body">
-                                    <pre style="word-wrap: break-word;" id="credential-container"></pre>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-        </div>
-
-        <!--<div class="container" tabindex="-1" role="dialog" id="myModal">-->
-            <!--<div class="modal-dialog" role="document">-->
-                <!--<div class="modal-content">-->
-                    <!--<div class="modal-header">-->
-                        <!--<h5 class="modal-title">uPort Credentials</h5>-->
-                        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-                            <!--<span aria-hidden="true">&times;</span>-->
-                        <!--</button>-->
-                    <!--</div>-->
-                    <!--<div class="modal-body">-->
-                        <!--<pre style="word-wrap: break-word;" id="credential-container"></pre>-->
-                    <!--</div>-->
+        <!--<div class="col-md-6 col-xs-12">-->
+            <!--<div class="box box-info">-->
+                        <!--<div class="modal-dialog" role="document">-->
+                            <!--<div class="modal-content">-->
+                                <!--<div class="modal-body">-->
+                                    <!--<pre style="word-wrap: break-word;" id="credential-container"></pre>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
                 <!--</div>-->
-            <!--</div>-->
         <!--</div>-->
     </div>
-    <!--<div class="modal" tabindex="-1" role="dialog" id="myModal">-->
-        <!--<div class="modal-dialog" role="document">-->
-            <!--<div class="modal-content">-->
-                <!--<div class="modal-header">-->
-                    <!--<h5 class="modal-title">uPort Credentials</h5>-->
-                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-                        <!--<span aria-hidden="true">&times;</span>-->
-                    <!--</button>-->
-                <!--</div>-->
-                <!--<div class="modal-body">-->
-                    <!--<pre style="word-wrap: break-word;" id="credential-container"></pre>-->
-                <!--</div>-->
-                <!--<div class="modal-footer">-->
-                    <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-
+    </div>
 
 </section>
 
