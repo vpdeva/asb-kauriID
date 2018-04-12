@@ -20,15 +20,18 @@ const web3 = uport.getWeb3();
 function uportLogin(){
     // Add the Request params after the Profile is verified
     uport.requestCredentials({
-        requested: ['name', 'phone', 'country'],
+        requested: ['avatar', 'name', 'email', 'phone', 'country', 'address'],
         notifications: true // We want this if we want to recieve credentials
     })
         .then((credentials) => {
             localStorage.setItem("name", credentials.name);
-                            localStorage.setItem("phone", credentials.phone);
-                            localStorage.setItem("country", credentials.country);
-                               console.log(location.protocol+"://"+location.host+'/home');
-                    location.href = '/kyc';
+            localStorage.setItem("avatar", credentials.avatar.uri);
+            localStorage.setItem("phone", credentials.phone);
+            localStorage.setItem("email", credentials.email);
+            localStorage.setItem("address", credentials.address);
+            localStorage.setItem("country", credentials.country);
+            console.log(location.protocol+"://"+location.host+'/home');
+            location.href = '/kyc';
         });
 
     // Attest specific credentials

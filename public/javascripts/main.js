@@ -2,6 +2,7 @@ function configureLinks() {
     $('.kyc-url').prop('href', kycUrl);
     $('.plans-url').prop('href', plansUrl);
     $('.creditscore-url').prop('href', creditscoreUrl);
+    $('.register-url').prop('href', registerUrl);
 };
 
 function getRequest(url) {

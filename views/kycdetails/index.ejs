@@ -16,8 +16,12 @@
 
 <script type="text/javascript">
     $('#name').val(localStorage.getItem("name"));
+    $('#avatar').val(localStorage.getItem("avatar"));
     $('#phone').val(localStorage.getItem("phone"));
+    $('#email').val(localStorage.getItem("email"));
+    $('#address').val(localStorage.getItem("address"));
     $('#country').val(localStorage.getItem("country"));
+    console.log(localStorage.getItem("avatar"));
     // document.getElementById('uportButton').disabled = true;
 
 
@@ -81,4 +85,10 @@
     //                 $('#uportError').removeClass('hidden');
     //             })
     // }
+    function setLink(){
+        location.href = localStorage.getItem('avatar');
+        }
+    window.onload = function(){
+        document.getElementById("avatar").src = localStorage.getItem('avatar');
+    }
 </script>
